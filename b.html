@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>B매장 방문</title>
+</head>
+<body style="font-family: sans-serif; text-align: center; padding-top: 40px;">
+  <h2>📍 B매장 방문 인증</h2>
+  <button onclick="visitB()" style="font-size:20px; padding:10px 20px;">
+    방문 완료
+  </button>
+  <p id="msg" style="margin-top:20px;"></p>
+
+  <script>
+    function visitB() {
+      localStorage.setItem("visitedB", "yes");
+
+      if (localStorage.getItem("visitedA") === "yes") {
+        document.getElementById("msg").innerHTML =
+          "🎉 두 매장 방문이 확인되었습니다!<br><br><strong>직원에게 이 화면을 보여주세요.</strong>";
+      } else {
+        document.getElementById("msg").innerText =
+          "B매장 방문이 저장되었습니다!";
+      }
+    }
+  </script>
+</body>
+</html>
